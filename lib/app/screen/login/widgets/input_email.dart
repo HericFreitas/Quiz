@@ -25,15 +25,17 @@ class CustomInputEmail extends StatelessWidget {
 
     return Container(
       child: TextFormField(
+        cursorColor: Color.fromARGB(255, 0, 0, 65),
         controller: controller,
         onSaved: onSaved,
         validator: validator,
         enabled: !busy,
         keyboardType: textInputType,
         decoration: InputDecoration(
-          fillColor: Colors.black38,
+          fillColor: Colors.grey[200],
           labelText: label,
-
+          focusColor: Color.fromARGB(255, 0, 0, 65),
+          hoverColor: Color.fromARGB(255, 0, 0, 65),
           filled: true,
         ),
       ),
