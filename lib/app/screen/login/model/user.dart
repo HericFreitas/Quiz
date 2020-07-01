@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 
 class UserModel {
 
@@ -8,7 +9,7 @@ class UserModel {
   int points;
   String uid;
 
-  UserModel({this.email, this.name, this.points, this.password, this.uid});
+  UserModel({@required this.email,@required this.name,@required this.points,@required this.uid});
 
   UserModel.fromDocuments(DocumentSnapshot doc ){
     uid = doc.documentID;
@@ -21,7 +22,7 @@ class UserModel {
     return {
       'name' : name,
       'email' : email,
-      'points' : points
+      'points' : points,
     };
   }
 }

@@ -50,6 +50,7 @@ class AccountRepository {
       uid: user.uid,
       name: name,
       email: user.email,
+      points: 0
     );
 
     return _firestore
