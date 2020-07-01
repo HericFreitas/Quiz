@@ -25,14 +25,14 @@ class AccountRepository {
   }
 
   Future<FirebaseUser> createUserWithEmailAndPassword(
-      {String email, String password, String name}) async {
+      {String email, String password, String name, String telefone, String date, String cpf, String cnpj}) async {
     try {
       AuthResult result = await _firebaseAuth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
 
-      await createUserData(user: result.user, name: name);
+      await createUserData(user: result.user, name: name, telefone: telefone, date: date, cpf: cpf, cnpj: cnpj);
 
       return result.user;
     } on PlatformException catch (e) {
@@ -45,12 +45,16 @@ class AccountRepository {
     }
   }
 
-  Future createUserData({FirebaseUser user, String name}) async {
+  Future createUserData({FirebaseUser user, String name, String cpf, String cnpj, String date, String telefone}) async {
     final userModel = UserModel(
       uid: user.uid,
       name: name,
       email: user.email,
-      points: 0
+      points: 0,
+      cnpj: cnpj,
+      cpf: cpf,
+      date: date,
+      telefone: telefone,
     );
 
     return _firestore

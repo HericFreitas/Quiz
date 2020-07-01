@@ -26,6 +26,18 @@ abstract class _LoginControllerBase with Store {
   @observable
   String userPassword = '';
 
+  @observable
+  String userCpf = '';
+
+  @observable
+  String userDate = '';
+
+  @observable
+  String userCnpj = '';
+
+  @observable
+  String userTelefone = '';
+
   @action
   void setBusy(bool value) => busy = value;
 
@@ -37,6 +49,19 @@ abstract class _LoginControllerBase with Store {
 
   @action
   void setName(String value) => userName = value.trim();
+
+  @action
+  void setCpf(String value) => userCpf = value.trim();
+
+  @action
+  void setDate(String value) => userDate = value.trim();
+
+  @action
+  void setTelefone(String value) => userTelefone = value.trim();
+
+  @action
+  void setCnpj(String value) => userCnpj = value.trim();
+
 
   @action
   Future signInWithCredentials(
@@ -55,7 +80,7 @@ abstract class _LoginControllerBase with Store {
     setBusy(true);
     _repository
         .createUserWithEmailAndPassword(
-        email: userEmail, password: userPassword, name: userName)
+        email: userEmail, password: userPassword, name: userName, cnpj: userCnpj, cpf: userCpf, date: userDate, telefone: userTelefone)
         .then((value) => onSuccess())
         .catchError(onError)
         .whenComplete(() => setBusy(false));

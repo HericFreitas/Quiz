@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:quiz/app/screen/login/login_screen.dart';
+import 'package:quiz/app/screen/profile/controller/profile_controller.dart';
 
 import 'app/screen/login/controller/loginController.dart';
 import 'app/screen/login/controller/loginController.dart';
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         Provider<LoginController>.value(value: LoginController()),
+        Provider<ProfileController>.value(value: ProfileController()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

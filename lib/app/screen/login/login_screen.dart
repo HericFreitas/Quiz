@@ -3,6 +3,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
 import 'package:quiz/app/screen/login/create_user.dart';
 import 'package:quiz/app/screen/login/forgot_password.dart';
+import 'package:quiz/app/screen/profile/profile_screen.dart';
 
 import '../../../shared/validators.dart';
 import '../../../shared/validators.dart';
@@ -50,11 +51,11 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   onSuccess() {
-//    Navigator.pushReplacement(
-//      context,
-//      MaterialPageRoute(builder: (context) => HomePage()),
-//    );
-  print("success");
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => ProfileScreen()),
+    );
+  print(_controller.userName);
   }
 
   void forgotPassword(){

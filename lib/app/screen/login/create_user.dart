@@ -114,7 +114,59 @@ class _CreateScreenState extends State<CreateScreen> {
                   builder: (_){
                     return CustomInputEmail(
                       busy: _controller.busy,
-                      label: 'E-mail',
+                      label: 'CPF',
+                      onSaved: _controller.setCpf,
+//                      validator: Validator.isValidEmail,
+                    );
+                  },
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Observer(
+                  builder: (_){
+                    return CustomInputEmail(
+                      busy: _controller.busy,
+                      label: 'CNPJ',
+                      onSaved: _controller.setCnpj,
+//                      validator: Validator.isValidatePassword,
+                    );
+                  },
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Observer(
+                  builder: (_){
+                    return CustomInputEmail(
+                      busy: _controller.busy,
+                      label: 'Data de Nascimento',
+                      onSaved: _controller.setDate,
+//                      validator: Validator.isValidatePassword,
+                    );
+                  },
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Observer(
+                  builder: (_){
+                    return CustomInputEmail(
+                      busy: _controller.busy,
+                      label: 'Telefone',
+                      onSaved: _controller.setTelefone,
+//                      validator: Validator.isValidatePassword,
+                    );
+                  },
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Observer(
+                  builder: (_){
+                    return CustomInputEmail(
+                      busy: _controller.busy,
+                      label: 'Email',
                       onSaved: _controller.setEmail,
                       validator: Validator.isValidEmail,
                     );
@@ -127,7 +179,7 @@ class _CreateScreenState extends State<CreateScreen> {
                   builder: (_){
                     return CustomInputEmail(
                       busy: _controller.busy,
-                      label: 'Password',
+                      label: 'Senha',
                       onSaved: _controller.setPassword,
                       validator: Validator.isValidatePassword,
                     );

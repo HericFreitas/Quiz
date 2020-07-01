@@ -69,6 +69,66 @@ mixin _$LoginController on _LoginControllerBase, Store {
     });
   }
 
+  final _$userCpfAtom = Atom(name: '_LoginControllerBase.userCpf');
+
+  @override
+  String get userCpf {
+    _$userCpfAtom.reportRead();
+    return super.userCpf;
+  }
+
+  @override
+  set userCpf(String value) {
+    _$userCpfAtom.reportWrite(value, super.userCpf, () {
+      super.userCpf = value;
+    });
+  }
+
+  final _$userDateAtom = Atom(name: '_LoginControllerBase.userDate');
+
+  @override
+  String get userDate {
+    _$userDateAtom.reportRead();
+    return super.userDate;
+  }
+
+  @override
+  set userDate(String value) {
+    _$userDateAtom.reportWrite(value, super.userDate, () {
+      super.userDate = value;
+    });
+  }
+
+  final _$userCnpjAtom = Atom(name: '_LoginControllerBase.userCnpj');
+
+  @override
+  String get userCnpj {
+    _$userCnpjAtom.reportRead();
+    return super.userCnpj;
+  }
+
+  @override
+  set userCnpj(String value) {
+    _$userCnpjAtom.reportWrite(value, super.userCnpj, () {
+      super.userCnpj = value;
+    });
+  }
+
+  final _$userTelefoneAtom = Atom(name: '_LoginControllerBase.userTelefone');
+
+  @override
+  String get userTelefone {
+    _$userTelefoneAtom.reportRead();
+    return super.userTelefone;
+  }
+
+  @override
+  set userTelefone(String value) {
+    _$userTelefoneAtom.reportWrite(value, super.userTelefone, () {
+      super.userTelefone = value;
+    });
+  }
+
   final _$signInWithCredentialsAsyncAction =
       AsyncAction('_LoginControllerBase.signInWithCredentials');
 
@@ -147,12 +207,60 @@ mixin _$LoginController on _LoginControllerBase, Store {
   }
 
   @override
+  void setCpf(String value) {
+    final _$actionInfo = _$_LoginControllerBaseActionController.startAction(
+        name: '_LoginControllerBase.setCpf');
+    try {
+      return super.setCpf(value);
+    } finally {
+      _$_LoginControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void setDate(String value) {
+    final _$actionInfo = _$_LoginControllerBaseActionController.startAction(
+        name: '_LoginControllerBase.setDate');
+    try {
+      return super.setDate(value);
+    } finally {
+      _$_LoginControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void setTelefone(String value) {
+    final _$actionInfo = _$_LoginControllerBaseActionController.startAction(
+        name: '_LoginControllerBase.setTelefone');
+    try {
+      return super.setTelefone(value);
+    } finally {
+      _$_LoginControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void setCnpj(String value) {
+    final _$actionInfo = _$_LoginControllerBaseActionController.startAction(
+        name: '_LoginControllerBase.setCnpj');
+    try {
+      return super.setCnpj(value);
+    } finally {
+      _$_LoginControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 busy: ${busy},
 userName: ${userName},
 userEmail: ${userEmail},
-userPassword: ${userPassword}
+userPassword: ${userPassword},
+userCpf: ${userCpf},
+userDate: ${userDate},
+userCnpj: ${userCnpj},
+userTelefone: ${userTelefone}
     ''';
   }
 }
